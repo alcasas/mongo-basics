@@ -1,0 +1,22 @@
+{
+  "name": "mongo-course",
+  "version": "1.0.0",
+  "description": "[Official mongodb documentation](https://docs.mongodb.com/manual/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alcasas/mongo-basics.git"
+  },
+  "author": "Alberto Casas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alcasas/mongo-basics/issues"
+  },
+  "homepage": "https://github.com/alcasas/mongo-basics#readme",
+  "dependencies": {
+    "mongoose": "^4.11.8"
+  }
+}

@@ -70,20 +70,35 @@ Indexes
 -------
 Get indexes
 
-    db.collectionName.getIndexes()
+    db.collectionName.getIndexes();
     db.movieDetails.getIndexes();
 
 Simple index
 
     db.collectionName.createIndex(keys, options);
     db.movieDetails.createIndex({rated:1}, {sparse:1});
+Compund index
+
+    db.movieDetails.createIndex({"awards.nominations":1});
+
 Multikey index
 
     db.movieDetails.createIndex({rated:1, metacritic: 1});
+Text index:
+
+    db.movies.createIndex( { title: "text" } );
+    db.movieDetails.createIndex({title:"text", plot:"text", actors:"text"}, {weights: {title:10, actors:5}, name:"textIndex"})
+    
+    db.movieDetails.find({$text:{$search:"Leo"}}, {score:{$meta:"textScore"}}).sort({score:{$meta:"textScore"}}).limit(5).pretty();
+2d Spatial index
+
+    db.collection.createIndex({location:"2d"});
+    db.collection.find({location:{$near:[50, 50]}})
+
 Delete index
 
     db.collectionName.dropIndex(indexName);
 
 Covered queries
 
-    db.movieDetails.explain("executionStats").find({rated:'PG',metacritic:'71'}, {_id:0})
+    db.movieDetails.explain("executionStats").find({rated:'PG',metacritic:'71'}, {_id:0});
