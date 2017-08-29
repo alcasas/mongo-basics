@@ -42,6 +42,10 @@ To update documents in a collection you can use the updates methods:
     db.collectionName.updateOne(where, document, options);
     db.collectionName.updateMany(where, document[], options);
 
+To delete documents in a collection you can use the remove method
+
+    db.collectionName.remove(where, options);
+
 Import and export
 -----------------
 To import data to mongodb you can user two different commands `mongorestore` and `mongoimport`.
@@ -59,8 +63,8 @@ To import data to mongodb you can user two different commands `mongorestore` and
 To export data from mongodb you can use `mongodump` and `mongoexport`.
 `mongodump` will export all the data in the database including indexes and metadata
 
-    mongodump -d database outputDir
-    mongodump -d database -c collection outputDir
+    mongodump -d database -o outputDir
+    mongodump -d database -c collection -o outputDir
 mongoexport exports only data from a collection
 
     mongoexport -d database -c collectionName file.json
