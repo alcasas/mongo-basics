@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/alcasas/mongo-basics#readme",
   "dependencies": {
-    "mongoose": "^5.13.17"
+    "mongoose": "^5.13.20"
   }
 }
